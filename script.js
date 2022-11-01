@@ -34,6 +34,10 @@ function generatePassword() {
   let upper = false;
   let numeric = false;
   let special = false;
+  
+
+  //Storage of all possible characters
+  let validCrit = [];
   const lowChar = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
   const upChar = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
   const numChar = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "0"];
@@ -52,7 +56,8 @@ do {
 
 let charCrit = false;
 
-// Checking to see if at least one of the character criteria options are being selected
+/* Checking to see if at least one of the character criteria options are being selected
+ and adding to the validCrit Array */ 
 while(!charCrit) {
 
   if (!charCrit) {
@@ -67,34 +72,45 @@ while(!charCrit) {
 
   if (low) {
     charCrit = true;
+    validCrit = validCrit.concat(lowChar);
+    console.log(validCrit);
   }
 
   if (upper) {
     charCrit = true;
+    validCrit = validCrit.concat(upChar);
+    console.log(validCrit);
   }
 
   if (numeric) {
     charCrit = true;
+    validCrit = validCrit.concat(numChar);
+    console.log(validCrit);
   }
 
   if (special) {
     charCrit = true;
-
+    validCrit = validCrit.concat(specChar);
+    console.log(validCrit);
   }
 
 }
 
-// TO DO - create way to store and/or access valid characters
+//Storage and Access of Chosen Characters
+for (let index = 0; index < length; index++) {
 
+  // Create way to generate random number to reference valid characters
+  let x = Math.floor(Math.random() * validCrit.length);
 
+  genPass += validCrit[x]; 
 
-// TO DO - create way to generate random number to reference valid characters
+  console.log(genPass);
+}
 
 /* TO DO - store references to randomly selected valid characters
   AND/OR store randomly selected characters
 */
 
-// TO DO - validate one of each user criteria used in new password
 
 // TO DO - if not already, turn password into a string
 // TO DO - save new password to variable
