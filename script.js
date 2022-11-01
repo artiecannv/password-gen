@@ -20,7 +20,7 @@ THEN the password is either displayed in an alert or written to the page
 
 
 
-//User needs the ability to choose 1-4 types of characters
+
 //Needs number generator
 //Needs to validate that their criteria has been met at least once
 
@@ -34,6 +34,7 @@ function generatePassword() {
   let upper = false;
   let numeric = false;
   let special = false;
+  let genPass = "";
 
 // Validate user prompts for Acceptable Criteria
 do {
@@ -61,25 +62,18 @@ while(!charCrit) {
   console.log('testing loop');
 
   if (low) {
-
     charCrit = true;
-
   }
 
   if (upper) {
-
     charCrit = true;
-
   }
 
   if (numeric) {
-
     charCrit = true;
-
   }
 
   if (special) {
-
     charCrit = true;
 
   }
@@ -101,9 +95,7 @@ while(!charCrit) {
 
 // TO DO - return the validated new password
 
-
-
-
+return genPass;
 }
 
 // Get references to the #generate element
