@@ -46,22 +46,40 @@ do {
 } while (length < 8 || length > 128 || isNaN(length));
 
 let charCrit = false;
-let i = 0;
 
-while(charCrit) {
+while(!charCrit) {
 
   low = confirm("Include Lowercase Characters?");
   upper = confirm("Include Uppercase Characters?");
   numeric = confirm("Include Numeric Characters? (0-9)");
   special = confirm("Include Special Characters? (!<>@?)");
+  console.log('testing loop');
 
+  if (low) {
 
+    charCrit = true;
 
-  
-  i++;
-  if (i === 10) {
-    break;
   }
+
+  if (upper) {
+
+    charCrit = true;
+
+  }
+
+  if (numeric) {
+
+    charCrit = true;
+
+  }
+
+  if (special) {
+
+    charCrit = true;
+
+  }
+
+
 
 }
 
