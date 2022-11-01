@@ -34,6 +34,10 @@ function generatePassword() {
   let upper = false;
   let numeric = false;
   let special = false;
+  const lowChar = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
+  const upChar = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
+  const numChar = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "0"];
+  const specChar = [" ", "!", "\"", "#", "$", "%", "&", "\'", "(", ")", "*", "+", ",", "-", ".", "/", ":", ";", "<", "=", ">", "?", "@", "[", "\\", "]", "^", "_", "`", ":", "|", "}", "~" ];
   let genPass = "";
 
 // Validate user prompts for Acceptable Criteria
@@ -82,6 +86,8 @@ while(!charCrit) {
 
 // TO DO - create way to store and/or access valid characters
 
+
+
 // TO DO - create way to generate random number to reference valid characters
 
 /* TO DO - store references to randomly selected valid characters
@@ -93,8 +99,7 @@ while(!charCrit) {
 // TO DO - if not already, turn password into a string
 // TO DO - save new password to variable
 
-// TO DO - return the validated new password
-
+//Return the validated new password
 return genPass;
 }
 
