@@ -18,9 +18,9 @@ WHEN the password is generated
 THEN the password is either displayed in an alert or written to the page
 */
 
-//Will need to use prompt, confirm, and alert method
-//Password needs to be between 8 and characters
-//User needs the ability to choose 1-4 types of 128 characters
+
+//Password needs to be between 8 and 128 characters
+//User needs the ability to choose 1-4 types of characters
 //Needs number generator
 //Needs to validate that their criteria has been met at least once
 
@@ -29,15 +29,12 @@ function generatePassword() {
   console.log("Button Test!")
 
   // Variables that will be used in the function
-  let length = prompt("Password length can be between 8 and 128 characters", 8);
-  let low = confirm("Include Lowercase Characters?")
-  let upper = confirm("Include Uppercase Characters?")
-  let numeric = confirm("Include Numeric Characters? (0-9)")
-  let special = confirm("Include Special Characters? (!<>@?)")
+  let length = prompt("Password length can be between 8 and 128 characters", '8-128');
+  let low = confirm("Include Lowercase Characters?");
+  let upper = confirm("Include Uppercase Characters?");
+  let numeric = confirm("Include Numeric Characters? (0-9)");
+  let special = confirm("Include Special Characters? (!<>@?)");
 
-
-
-  return password
 }
 
 // Get references to the #generate element
