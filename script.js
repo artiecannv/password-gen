@@ -19,7 +19,7 @@ THEN the password is either displayed in an alert or written to the page
 */
 
 
-//Password needs to be between 8 and 128 characters
+
 //User needs the ability to choose 1-4 types of characters
 //Needs number generator
 //Needs to validate that their criteria has been met at least once
@@ -29,28 +29,41 @@ function generatePassword() {
   console.log("Button Test!")
 
   // Variables that will be used in the function
-  let length = prompt("Password length can be between 8 and 128 characters", 8);
-  let low = confirm("Include Lowercase Characters?");
-  let upper = confirm("Include Uppercase Characters?");
-  let numeric = confirm("Include Numeric Characters? (0-9)");
-  let special = confirm("Include Special Characters? (!<>@?)");
+  let length = 0;
+  let low = false;
+  let upper = false;
+  let numeric = false;
+  let special = false;
 
-
-// TO DO - validate user prompts for acceptable criteria
-
-// Need to check that the password is greater than 8 and less than 128 characters
-// Need to confirm the user is using numbers
-// If the Value is Invalid, reprompt the user (or cancel it)
-
-// x >= 8 && x <= 128 && !isNaN(length)
-
-// Use a while or do while loop
-
+// Validate user prompts for Acceptable Criteria
 do {
+
+  length = prompt("Password length can be between 8 and 128 characters", 8);
+  length = Number(length);
+ /* console.log(length);
+  console.log(typeof(length)); */
+  
+} while (length < 8 || length > 128 || isNaN(length));
+
+let charCrit = false;
+let i = 0;
+
+while(charCrit) {
+
+  low = confirm("Include Lowercase Characters?");
+  upper = confirm("Include Uppercase Characters?");
+  numeric = confirm("Include Numeric Characters? (0-9)");
+  special = confirm("Include Special Characters? (!<>@?)");
+
 
 
   
-} while ( length >= 8 && length <= 128 && !isNaN(length));
+  i++;
+  if (i === 10) {
+    break;
+  }
+
+}
 
 // TO DO - create way to store and/or access valid characters
 
