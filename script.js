@@ -47,7 +47,12 @@ do {
 
 let charCrit = false;
 
+// Checking to see if at least one of the character criteria options are being selected
 while(!charCrit) {
+
+  if (!charCrit) {
+    alert("Make sure that the OK button is selected for at least one of the following options.");
+  }
 
   low = confirm("Include Lowercase Characters?");
   upper = confirm("Include Uppercase Characters?");
@@ -78,8 +83,6 @@ while(!charCrit) {
     charCrit = true;
 
   }
-
-
 
 }
 
