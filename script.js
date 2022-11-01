@@ -29,11 +29,46 @@ function generatePassword() {
   console.log("Button Test!")
 
   // Variables that will be used in the function
-  let length = prompt("Password length can be between 8 and 128 characters", '8-128');
+  let length = prompt("Password length can be between 8 and 128 characters", 8);
   let low = confirm("Include Lowercase Characters?");
   let upper = confirm("Include Uppercase Characters?");
   let numeric = confirm("Include Numeric Characters? (0-9)");
   let special = confirm("Include Special Characters? (!<>@?)");
+
+
+// TO DO - validate user prompts for acceptable criteria
+
+// Need to check that the password is greater than 8 and less than 128 characters
+// Need to confirm the user is using numbers
+// If the Value is Invalid, reprompt the user (or cancel it)
+
+// x >= 8 && x <= 128 && !isNaN(length)
+
+// Use a while or do while loop
+
+do {
+
+
+  
+} while ( length >= 8 && length <= 128 && !isNaN(length));
+
+// TO DO - create way to store and/or access valid characters
+
+// TO DO - create way to generate random number to reference valid characters
+
+/* TO DO - store references to randomly selected valid characters
+  AND/OR store randomly selected characters
+*/
+
+// TO DO - validate one of each user criteria used in new password
+
+// TO DO - if not already, turn password into a string
+// TO DO - save new password to variable
+
+// TO DO - return the validated new password
+
+
+
 
 }
 
