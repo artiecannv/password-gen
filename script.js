@@ -1,23 +1,3 @@
-// Assignment code here
-
-/*
-GIVEN I need a new, secure password
-WHEN I click the button to generate a password
-THEN I am presented with a series of prompts for password criteria
-WHEN prompted for password criteria
-THEN I select which criteria to include in the password
-WHEN prompted for the length of the password
-THEN I choose a length of at least 8 characters and no more than 128 characters
-WHEN asked for character types to include in the password
-THEN I confirm whether or not to include lowercase, uppercase, numeric, and/or special characters
-WHEN I answer each prompt
-THEN my input should be validated and at least one character type should be selected
-WHEN all prompts are answered
-THEN a password is generated that matches the selected criteria
-WHEN the password is generated
-THEN the password is either displayed in an alert or written to the page
-*/
-
 function generatePassword() {
   //Logs to the console, to show the button is working
   console.log("Button Test!")
@@ -57,8 +37,6 @@ function generatePassword() {
 
     length = prompt("Password length can be between 8 and 128 characters", 8);
     length = Number(length);
-    /* console.log(length);
-     console.log(typeof(length)); */
 
   } while (length < 8 || length > 128 || isNaN(length));
 
@@ -142,6 +120,9 @@ function generatePassword() {
     }
 
   }
+
+
+  //Loop to rerun the function if criteria is not met
 /*
   let rerunCrit = false;
 
@@ -170,10 +151,6 @@ function generatePassword() {
   } while (!rerunCrit || counter < 10);
 */
   
-
-   
-
-
   //Return the validated new password
   return genPass;
 }

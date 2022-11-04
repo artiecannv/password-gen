@@ -14,7 +14,9 @@ Simple, just hit generate! Several prompts will appear in the browser, asking fo
 
 I had a lot of help from a fellow classmate, Joshua Taylor. Thanks a ton!
 
+## License
 
+MIT License
 
 
 
