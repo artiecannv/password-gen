@@ -25,9 +25,7 @@ function generatePassword() {
 
       // Create way to generate random number to reference valid characters
       let x = Math.floor(Math.random() * validCrit.length);
-
       genPass += validCrit[x];
-
       console.log(genPass);
     }
   }
@@ -81,6 +79,7 @@ function generatePassword() {
     }
 
   }
+console.log(validCrit)
 
   createPassword();
 
@@ -95,62 +94,30 @@ function generatePassword() {
   for (let index = 0; index < genPass.length; index++) {
     console.log(genPass[index]);
 
-    if (low) {
-
-      validLow = lowChar.includes(genPass[index]);
-
+    if (lowChar.includes(genPass[index])) {
+      validLow = true;
     }
 
-    if (upper) {
-
-      validUpper = upChar.includes(genPass[index]);
-
+    if (upChar.includes(genPass[index])) {
+      validUpper = true;
     }
 
-    if (numeric) {
-
-      validNum = numChar.includes(genPass[index]);
-
+    if (numChar.includes(genPass[index])) {
+      validNum = true;
     }
 
-    if (special) {
-
-      validSpec = specChar.includes(genPass[index]);
-
+    if (specChar.includes(genPass[index])) {
+      validSpec = true;
     }
 
   }
+console.log(validLow, validUpper, validNum, validSpec)
 
+if ((!validLow && low) || (!validUpper && upper) || (!validNum && numeric) || (!validSpec && special)) {
+  createPassword();
+}
 
-  //Loop to rerun the function if criteria is not met
-/*
-  let rerunCrit = false;
-
-  let counter = 0
-
-  do {
-
-    counter++
-
-    if (low && !validLow) {
-      createPassword();
-    } else if (upper && !validUpper) {
-      createPassword();
-    } else if (numeric && !validNum) {
-      createPassword();
-    } else if (special && validSpec) {
-      createPassword();
-    } else {
-      break;
-      rerunCrit = true;
-  
-    }
-
-    console.log(counter)
-
-  } while (!rerunCrit || counter < 10);
-*/
-  
+ 
   //Return the validated new password
   return genPass;
 }
